@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex_Coder - Développeur Web Freelance en Côte d'Ivoire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a8a',
+                        'navy-light': '#3b82f6',
+                        'orange': '#f97316',
+                        'orange-light': '#fb923c'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-navy text-white py-4 fixed w-full top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">Alex_Coder</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-orange transition">À propos</a>
+                <a href="#services" class="hover:text-orange transition">Services</a>
+                <a href="#portfolio" class="hover:text-orange transition">Réalisations</a>
+                <a href="#contact" class="hover:text-orange transition">Contact</a>
+            </div>
+            <button class="md:hidden" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light px-4 py-2">
+            <a href="#about" class="block py-2 hover:text-orange">À propos</a>
+            <a href="#services" class="block py-2 hover:text-orange">Services</a>
+            <a href="#portfolio" class="block py-2 hover:text-orange">Réalisations</a>
+            <a href="#contact" class="block py-2 hover:text-orange">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="relative bg-gradient-to-r from-navy to-navy-light text-white py-20 mt-16 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)" />
+            </svg>
+        </div>
+        <!-- Floating Code Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-10 left-10 text-white opacity-20 text-6xl animate-pulse">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="absolute top-20 right-20 text-white opacity-15 text-4xl animate-bounce">
+                <i class="fab fa-html5"></i>
+            </div>
+            <div class="absolute bottom-20 left-20 text-white opacity-20 text-5xl animate-pulse">
+                <i class="fab fa-css3-alt"></i>
+            </div>
+            <div class="absolute bottom-10 right-10 text-white opacity-15 text-4xl animate-bounce">
+                <i class="fab fa-js-square"></i>
+            </div>
+            <div class="absolute top-1/2 left-1/4 text-white opacity-10 text-3xl animate-pulse">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="absolute top-1/3 right-1/3 text-white opacity-15 text-3xl animate-bounce">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="mb-8">
+                <div class="w-32 h-32 mx-auto mb-6 bg-white rounded-full flex items-center justify-center">
+                    <svg class="w-20 h-20 text-navy" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4-4H7v2h10V7z"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-5xl font-bold mb-4">Alex_Coder</h1>
+            <p class="text-xl mb-8">Création de sites vitrines modernes pour PME locales</p>
+            <div class="space-x-4">
+                <button onclick="scrollToContact()" class="bg-orange hover:bg-orange-light text-white px-8 py-3 rounded-lg font-semibold transition">
+                    Demander un devis
+                </button>
+                <a href="https://wa.me/+2250564113072" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition inline-block">
+                    <i class="fab fa-whatsapp mr-2"></i>Contact WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- À propos -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-navy">À propos</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-navy">Développeur Web Passionné</h3>
+                        <p class="text-gray-600 mb-6">
+                            Basé en Côte d'Ivoire, je me spécialise dans la création de sites web modernes et performants pour les PME locales. Mon approche est orientée résultats : chaque site que je développe est conçu pour convertir vos visiteurs en clients.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange mr-3"></i>
+                                <span>2+ années d'expérience</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange mr-3"></i>
+                                <span>10+ projets réalisés</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange mr-3"></i>
+                                <span>Support 7j/7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 text-navy">Technologies maîtrisées</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <i class="fab fa-html5 text-3xl text-orange mb-2"></i>
+                                <p class="font-semibold">HTML5/CSS3</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <i class="fab fa-js-square text-3xl text-orange mb-2"></i>
+                                <p class="font-semibold">JavaScript</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <i class="fab fa-react text-3xl text-orange mb-2"></i>
+                                <p class="font-semibold">React</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <i class="fab fa-wordpress text-3xl text-orange mb-2"></i>
+                                <p class="font-semibold">WordPress</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-navy">Mes Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Sites Vitrines</h3>
+                    <p class="text-gray-600">Création de sites web modernes et responsives pour présenter votre entreprise</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-whatsapp text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Intégration WhatsApp</h3>
+                    <p class="text-gray-600">Connectez directement vos clients via WhatsApp pour plus de conversions</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Optimisation Mobile</h3>
+                    <p class="text-gray-600">Sites parfaitement adaptés à tous les appareils mobiles</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Maintenance</h3>
+                    <p class="text-gray-600">Support technique et mises à jour régulières de votre site</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réalisations -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-navy">Mes Réalisations</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="openModal('restaurant')">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 relative overflow-hidden">
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Restaurant background -->
+                            <rect width="400" height="200" fill="url(#restaurantGradient)"/>
+                            <defs>
+                                <linearGradient id="restaurantGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Table -->
+                            <ellipse cx="200" cy="160" rx="80" ry="20" fill="#8b4513" opacity="0.8"/>
+                            <rect x="120" y="140" width="160" height="20" rx="10" fill="#a0522d"/>
+                            <!-- Plates -->
+                            <circle cx="170" cy="130" r="25" fill="#f8f8f8" opacity="0.9"/>
+                            <circle cx="230" cy="130" r="25" fill="#f8f8f8" opacity="0.9"/>
+                            <!-- Food -->
+                            <circle cx="170" cy="130" r="15" fill="#ff6b35"/>
+                            <circle cx="230" cy="130" r="15" fill="#4ade80"/>
+                            <!-- Utensils -->
+                            <rect x="140" y="120" width="2" height="25" fill="#c0c0c0"/>
+                            <rect x="145" y="120" width="2" height="25" fill="#c0c0c0"/>
+                            <rect x="255" y="125" width="15" height="2" fill="#c0c0c0"/>
+                            <!-- Chef hat -->
+                            <ellipse cx="200" cy="80" rx="25" ry="15" fill="#ffffff"/>
+                            <rect x="175" y="65" width="50" height="30" rx="25" fill="#ffffff"/>
+                            <rect x="185" y="70" width="5" height="15" fill="#f0f0f0"/>
+                            <rect x="195" y="75" width="5" height="10" fill="#f0f0f0"/>
+                            <rect x="205" y="70" width="5" height="15" fill="#f0f0f0"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-navy">Restaurant Le Délice</h3>
+                        <p class="text-gray-600 text-sm">Site vitrine avec menu en ligne</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="openModal('salon')">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 relative overflow-hidden">
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Salon background -->
+                            <rect width="400" height="200" fill="url(#salonGradient)"/>
+                            <defs>
+                                <linearGradient id="salonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Mirror -->
+                            <rect x="150" y="40" width="100" height="80" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="3"/>
+                            <rect x="155" y="45" width="90" height="70" rx="5" fill="#f9fafb"/>
+                            <!-- Chair -->
+                            <ellipse cx="200" cy="160" rx="40" ry="15" fill="#8b5cf6"/>
+                            <rect x="160" y="145" width="80" height="15" rx="7" fill="#a855f7"/>
+                            <rect x="190" y="130" width="20" height="30" fill="#7c3aed"/>
+                            <!-- Hair styling tools -->
+                            <rect x="120" y="100" width="3" height="40" fill="#374151" transform="rotate(15 120 100)"/>
+                            <circle cx="118" cy="95" r="8" fill="#6b7280"/>
+                            <rect x="280" y="90" width="4" height="50" fill="#374151"/>
+                            <rect x="275" y="85" width="14" height="8" rx="4" fill="#ef4444"/>
+                            <!-- Scissors -->
+                            <g transform="translate(300,110) rotate(45)">
+                                <rect x="0" y="0" width="2" height="20" fill="#6b7280"/>
+                                <rect x="5" y="0" width="2" height="20" fill="#6b7280"/>
+                                <circle cx="1" cy="22" r="3" fill="#9ca3af"/>
+                                <circle cx="6" cy="22" r="3" fill="#9ca3af"/>
+                            </g>
+                            <!-- Decorative elements -->
+                            <circle cx="100" cy="60" r="4" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="320" cy="50" r="3" fill="#fbbf24" opacity="0.7"/>
+                            <circle cx="80" cy="120" r="2" fill="#fbbf24" opacity="0.7"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-navy">Salon Beauté Plus</h3>
+                        <p class="text-gray-600 text-sm">Réservation en ligne et galerie</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="openModal('school')">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- School background -->
+                            <rect width="400" height="200" fill="url(#schoolGradient)"/>
+                            <defs>
+                                <linearGradient id="schoolGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- School building -->
+                            <rect x="100" y="80" width="200" height="100" fill="#ffffff" opacity="0.9"/>
+                            <rect x="110" y="90" width="180" height="80" fill="#f8fafc"/>
+                            <!-- Roof -->
+                            <polygon points="90,80 200,40 310,80" fill="#dc2626"/>
+                            <!-- Door -->
+                            <rect x="180" y="130" width="40" height="50" fill="#8b4513"/>
+                            <circle cx="210" cy="155" r="2" fill="#fbbf24"/>
+                            <!-- Windows -->
+                            <rect x="130" y="100" width="25" height="20" fill="#3b82f6" opacity="0.3"/>
+                            <rect x="245" y="100" width="25" height="20" fill="#3b82f6" opacity="0.3"/>
+                            <rect x="130" y="130" width="25" height="20" fill="#3b82f6" opacity="0.3"/>
+                            <rect x="245" y="130" width="25" height="20" fill="#3b82f6" opacity="0.3"/>
+                            <!-- Window frames -->
+                            <rect x="130" y="100" width="25" height="20" fill="none" stroke="#ffffff" stroke-width="2"/>
+                            <rect x="245" y="100" width="25" height="20" fill="none" stroke="#ffffff" stroke-width="2"/>
+                            <rect x="130" y="130" width="25" height="20" fill="none" stroke="#ffffff" stroke-width="2"/>
+                            <rect x="245" y="130" width="25" height="20" fill="none" stroke="#ffffff" stroke-width="2"/>
+                            <!-- Cross dividers -->
+                            <line x1="142.5" y1="100" x2="142.5" y2="120" stroke="#ffffff" stroke-width="1"/>
+                            <line x1="130" y1="110" x2="155" y2="110" stroke="#ffffff" stroke-width="1"/>
+                            <line x1="257.5" y1="100" x2="257.5" y2="120" stroke="#ffffff" stroke-width="1"/>
+                            <line x1="245" y1="110" x2="270" y2="110" stroke="#ffffff" stroke-width="1"/>
+                            <line x1="142.5" y1="130" x2="142.5" y2="150" stroke="#ffffff" stroke-width="1"/>
+                            <line x1="130" y1="140" x2="155" y2="140" stroke="#ffffff" stroke-width="1"/>
+                            <line x1="257.5" y1="130" x2="257.5" y2="150" stroke="#ffffff" stroke-width="1"/>
+                            <line x1="245" y1="140" x2="270" y2="140" stroke="#ffffff" stroke-width="1"/>
+                            <!-- Books -->
+                            <rect x="50" y="150" width="8" height="25" fill="#ef4444" transform="rotate(-10 50 150)"/>
+                            <rect x="60" y="148" width="8" height="25" fill="#10b981" transform="rotate(-5 60 148)"/>
+                            <rect x="70" y="150" width="8" height="25" fill="#f59e0b"/>
+                            <!-- Graduation cap -->
+                            <rect x="320" y="120" width="40" height="4" fill="#1f2937"/>
+                            <rect x="330" y="115" width="20" height="10" fill="#1f2937"/>
+                            <rect x="345" y="110" width="2" height="15" fill="#fbbf24"/>
+                            <circle cx="346" cy="108" r="2" fill="#fbbf24"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-navy">École Privée Excellence</h3>
+                        <p class="text-gray-600 text-sm">Site institutionnel complet</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="openModal('service')">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Service background -->
+                            <rect width="400" height="200" fill="url(#serviceGradient)"/>
+                            <defs>
+                                <linearGradient id="serviceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4ade80;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Toolbox -->
+                            <rect x="150" y="120" width="100" height="50" rx="5" fill="#374151"/>
+                            <rect x="155" y="115" width="90" height="10" rx="5" fill="#4b5563"/>
+                            <circle cx="175" cy="120" r="2" fill="#9ca3af"/>
+                            <circle cx="225" cy="120" r="2" fill="#9ca3af"/>
+                            <!-- Tools -->
+                            <rect x="160" y="130" width="3" height="30" fill="#fbbf24"/>
+                            <rect x="158" y="125" width="7" height="8" fill="#f59e0b"/>
+                            <!-- Wrench -->
+                            <rect x="180" y="135" width="20" height="4" fill="#6b7280"/>
+                            <rect x="175" y="130" width="6" height="14" fill="#6b7280"/>
+                            <rect x="199" y="130" width="6" height="14" fill="#6b7280"/>
+                            <!-- Screwdriver -->
+                            <rect x="210" y="130" width="2" height="25" fill="#ef4444"/>
+                            <rect x="208" y="125" width="6" height="8" fill="#dc2626"/>
+                            <!-- Gear icons -->
+                            <g transform="translate(100,80)">
+                                <circle cx="0" cy="0" r="15" fill="#ffffff" opacity="0.8"/>
+                                <circle cx="0" cy="0" r="8" fill="none" stroke="#374151" stroke-width="2"/>
+                                <rect x="-2" y="-12" width="4" height="6" fill="#374151"/>
+                                <rect x="-2" y="6" width="4" height="6" fill="#374151"/>
+                                <rect x="-12" y="-2" width="6" height="4" fill="#374151"/>
+                                <rect x="6" y="-2" width="6" height="4" fill="#374151"/>
+                            </g>
+                            <g transform="translate(300,70) scale(0.8)">
+                                <circle cx="0" cy="0" r="15" fill="#ffffff" opacity="0.6"/>
+                                <circle cx="0" cy="0" r="8" fill="none" stroke="#374151" stroke-width="2"/>
+                                <rect x="-2" y="-12" width="4" height="6" fill="#374151"/>
+                                <rect x="-2" y="6" width="4" height="6" fill="#374151"/>
+                                <rect x="-12" y="-2" width="6" height="4" fill="#374151"/>
+                                <rect x="6" y="-2" width="6" height="4" fill="#374151"/>
+                            </g>
+                            <!-- Service icons -->
+                            <rect x="80" y="140" width="20" height="15" rx="2" fill="#ffffff" opacity="0.7"/>
+                            <rect x="85" y="145" width="10" height="5" fill="#3b82f6"/>
+                            <circle cx="320" cy="140" r="8" fill="#ffffff" opacity="0.7"/>
+                            <rect x="316" y="136" width="8" height="8" fill="#f59e0b"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-navy">Services Pro CI</h3>
+                        <p class="text-gray-600 text-sm">Plateforme de services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis clients -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-navy">Avis Clients</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Excellent travail ! Mon site de restaurant attire maintenant beaucoup plus de clients. Alex est très professionnel."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold">KM</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Kouassi Marie</p>
+                            <p class="text-sm text-gray-500">Propriétaire Restaurant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Site livré dans les délais, très beau design et fonctionne parfaitement sur mobile. Je recommande !"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold">AB</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Adjoua Brigitte</p>
+                            <p class="text-sm text-gray-500">Directrice École</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                        <i class="fas fa-star text-orange"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Grâce au bouton WhatsApp intégré, mes clients me contactent directement. Mes ventes ont augmenté !"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold">YS</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Yao Serge</p>
+                            <p class="text-sm text-gray-500">Salon de coiffure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-navy">Mon Processus de Travail</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Brief</h3>
+                    <p class="text-gray-600">Analyse de vos besoins et définition des objectifs</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Maquette</h3>
+                    <p class="text-gray-600">Création du design et validation avec vous</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Développement</h3>
+                    <p class="text-gray-600">Codage et intégration de toutes les fonctionnalités</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold text-xl">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Livraison</h3>
+                    <p class="text-gray-600">Mise en ligne et formation à l'utilisation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offre spéciale -->
+    <section class="py-16 bg-gradient-to-r from-orange to-orange-light text-white">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl font-bold mb-6">Offre Spéciale Lancement</h2>
+            <p class="text-xl mb-8">Pour les 10 premiers clients</p>
+            <div class="bg-white text-navy p-8 rounded-lg max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4">Nom de domaine OFFERT la 1ère année</h3>
+                <p class="text-lg mb-6">+ Hébergement gratuit pendant 3 mois</p>
+                <div class="text-3xl font-bold mb-4">À partir de 150 000 FCFA</div>
+                <p class="text-sm text-gray-600 mb-6">Au lieu de 200 000 FCFA</p>
+                <button onclick="scrollToContact()" class="bg-navy hover:bg-navy-light text-white px-8 py-3 rounded-lg font-semibold transition">
+                    Profiter de l'offre
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-navy">Contact</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-navy">Parlons de votre projet</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp text-green-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">WhatsApp</p>
+                                <a href="https://wa.me/+2250564113072" class="text-navy hover:text-orange">+225 05 64 11 30 72</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-navy text-2xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <a href="mailto:alexkonan3717@gmail.com" class="text-navy hover:text-orange">alexkonan3717@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-navy text-2xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Localisation</p>
+                                <p class="text-gray-600">Abidjan, Côte d'Ivoire <br>Yopougon Lubafrique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/+2250564113072" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition inline-block w-full text-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Discuter sur WhatsApp
+                        </a>
+                        <button onclick="scrollToContact()" class="bg-orange hover:bg-orange-light text-white px-6 py-3 rounded-lg font-semibold transition w-full">
+                            Demander un devis gratuit
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-4" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-navy">Nom complet</label>
+                            <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-navy">Email</label>
+                            <input type="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-navy">Téléphone</label>
+                            <input type="tel" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-navy">Type de projet</label>
+                            <select required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                                <option value="">Sélectionnez...</option>
+                                <option value="vitrine">Site vitrine</option>
+                                <option value="ecommerce">Site e-commerce</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-navy">Message</label>
+                            <textarea required rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none" placeholder="Décrivez votre projet..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-navy hover:bg-navy-light text-white px-6 py-3 rounded-lg font-semibold transition w-full">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-8">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="mb-4">
+                <h3 class="text-2xl font-bold mb-2">Alex_Coder</h3>
+                <p class="text-gray-300">Développeur Web Freelance en Côte d'Ivoire</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-300 hover:text-orange transition">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-orange transition">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-orange transition">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-400">&copy; 2024 Alex_Coder. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Modal pour portfolio -->
+    <div id="portfolio-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-2xl font-bold text-navy"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="text-gray-600">
+                <!-- Contenu dynamique -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openModal(type) {
+            const modal = document.getElementById('portfolio-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const projects = {
+                restaurant: {
+                    title: 'Restaurant Le Délice',
+                    content: `
+                        <div class="space-y-6">
+                            <div class="relative bg-black rounded-lg overflow-hidden">
+                                <video class="w-full h-64 object-cover" autoplay muted loop controls>
+                                    <source src="asset/restaurant_demo.mp4" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture de vidéos.
+                                </video>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p><strong>Projet :</strong> Site vitrine pour restaurant</p>
+                                    <p><strong>Fonctionnalités :</strong> Menu en ligne, réservation, galerie photos</p>
+                                </div>
+                                <div>
+                                    <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript</p>
+                                    <p><strong>Résultat :</strong> +40% de réservations en ligne</p>
+                                </div>
+                            </div>
+                            <div class="border-t pt-4">
+                                <a href="https://restaurant-delice-demo.com" target="_blank" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le site en ligne
+                                </a>
+                            </div>
+                        </div>
+                    `
+                },
+                salon: {
+                    title: 'Salon Beauté Plus',
+                    content: `
+                        <div class="space-y-6">
+                            <div class="relative bg-black rounded-lg overflow-hidden">
+                                <video class="w-full h-64 object-cover" autoplay muted loop controls>
+                                    <source src="asset/demo_coiffure.mp4" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture de vidéos.
+                                </video>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p><strong>Projet :</strong> Site vitrine pour salon de coiffure</p>
+                                    <p><strong>Fonctionnalités :</strong> Galerie, prise de rendez-vous, tarifs</p>
+                                </div>
+                                <div>
+                                    <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript</p>
+                                    <p><strong>Résultat :</strong> +60% de nouveaux clients</p>
+                                </div>
+                            </div>
+                            <div class="border-t pt-4">
+                                <a href="https://salon-beaute-plus-demo.com" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-semibold transition inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le site en ligne
+                                </a>
+                            </div>
+                        </div>
+                    `
+                },
+                school: {
+                    title: 'École Privée Excellence',
+                    content: `
+                        <div class="space-y-6">
+                            <div class="relative bg-black rounded-lg overflow-hidden">
+                                <video class="w-full h-64 object-cover" autoplay muted loop controls>
+                                    <source src="asset/demo_ecole.mp4" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture de vidéos.
+                                </video>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p><strong>Projet :</strong> Site institutionnel pour école privée</p>
+                                    <p><strong>Fonctionnalités :</strong> Programmes, inscription, actualités</p>
+                                </div>
+                                <div>
+                                    <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript, CMS</p>
+                                    <p><strong>Résultat :</strong> +50% d'inscriptions</p>
+                                </div>
+                            </div>
+                            <div class="border-t pt-4">
+                                <a href="https://ecole-excellence-demo.com" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le site en ligne
+                                </a>
+                            </div>
+                        </div>
+                    `
+                },
+                service: {
+                    title: 'Services Pro CI',
+                    content: `
+                        <div class="space-y-6">
+                            <div class="relative bg-black rounded-lg overflow-hidden">
+                                <video class="w-full h-64 object-cover" autoplay muted loop controls>
+                                    <source src="asset/demo_service.mp4" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture de vidéos.
+                                </video>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p><strong>Projet :</strong> Plateforme de services professionnels</p>
+                                    <p><strong>Fonctionnalités :</strong> Catalogue, devis, témoignages</p>
+                                </div>
+                                <div>
+                                    <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript</p>
+                                    <p><strong>Résultat :</strong> +80% de demandes de devis</p>
+                                </div>
+                            </div>
+                            <div class="border-t pt-4">
+                                <a href="https://services-pro-ci-demo.com" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition inline-flex items-center">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le site en ligne
+                                </a>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            title.textContent = projects[type].title;
+            content.innerHTML = projects[type].content;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('portfolio-modal').classList.add('hidden');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Merci pour votre message ! Je vous recontacterai dans les plus brefs délais.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling pour les liens de navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96800b35b06b8b34',t:'MTc1Mzk5NTgyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
