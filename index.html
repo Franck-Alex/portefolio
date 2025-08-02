@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex_Coder - Développeur Web Freelance en Côte d'Ivoire</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "Y-txT9FWeinZQEYJ3",
+        });
+    })();
+    </script>
     <script>
         tailwind.config = {
             theme: {
@@ -548,19 +558,19 @@
                     <form class="space-y-4" onsubmit="handleSubmit(event)">
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-navy">Nom complet</label>
-                            <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                            <input type="text" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-navy">Email</label>
-                            <input type="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                            <input type="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-navy">Téléphone</label>
-                            <input type="tel" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                            <input type="tel" name="phone" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-navy">Type de projet</label>
-                            <select required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
+                            <select name="project" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none">
                                 <option value="">Sélectionnez...</option>
                                 <option value="vitrine">Site vitrine</option>
                                 <option value="ecommerce">Site e-commerce</option>
@@ -570,7 +580,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-navy">Message</label>
-                            <textarea required rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none" placeholder="Décrivez votre projet..."></textarea>
+                            <textarea name="message" required rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:border-orange focus:outline-none" placeholder="Décrivez votre projet..."></textarea>
                         </div>
                         <button type="submit" class="bg-navy hover:bg-navy-light text-white px-6 py-3 rounded-lg font-semibold transition w-full">
                             Envoyer le message
@@ -763,8 +773,34 @@
 
         function handleSubmit(event) {
             event.preventDefault();
-            alert('Merci pour votre message ! Je vous recontacterai dans les plus brefs délais.');
-            event.target.reset();
+            
+            const form = event.target;
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                project: form.project.value,
+                message: form.message.value
+            };
+
+            // Envoi via EmailJS
+            emailjs.send("service_h4m8tr3", "template_9psorik", formData)
+                .then(() => {
+                    alert('✅ Email envoyé avec succès !');
+
+                    // Ouvrir WhatsApp avec message pré-rempli
+                    const whatsappNumber = "+2250564113072"; // Ton numéro WhatsApp avec indicatif
+                    const whatsappMessage = `Bonjour, je suis ${formData.name}.\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nProjet: ${formData.project}\nMessage: ${formData.message}`;
+                
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    window.open(whatsappUrl, '_blank');
+
+                    form.reset();
+                })
+                .catch((error) => {
+                    alert('❌ Erreur lors de l’envoi : ' + JSON.stringify(error));
+                });
+            
         }
 
         // Smooth scrolling pour les liens de navigation
