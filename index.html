@@ -789,7 +789,7 @@
                     alert('✅ Email envoyé avec succès !');
 
                     // Ouvrir WhatsApp avec message pré-rempli
-                    const whatsappNumber = "0564113072"; // Ton numéro WhatsApp avec indicatif
+                    const whatsappNumber = "+2250564113072"; // Ton numéro WhatsApp avec indicatif
                     const whatsappMessage = `Bonjour, je suis ${formData.name}.\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nProjet: ${formData.project}\nMessage: ${formData.message}`;
                 
                     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
