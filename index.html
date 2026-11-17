@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Franck Konan — développeur web junior et concepteur de solutions numériques.">
+  <title>Franck Konan — Développeur web & solutions numériques</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Icône du site -->
+  <link rel="icon" type="image/png" href="assets/images/fk-icon.png">
+  <link rel="apple-touch-icon" href="assets/images/fk-icon.png">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Accueil">
+        <span class="brand-mark">FK</span><span>Franck<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a class="nav-cta" href="#contact">Me contacter <span>↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section container" id="accueil">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> DISPONIBLE POUR OPPORTUNITÉS ET COLLABORATIONS</div>
+        <p class="hero-kicker">Bonjour, je suis</p>
+        <h1>Franck <span class="gradient-text">Konan.</span></h1>
+        <h2>Je conçois des applications web <span class="muted">qui répondent à de vrais besoins.</span></h2>
+        <p class="hero-description">
+          Développeur web junior, je transforme des idées et des problématiques concrètes
+          en solutions numériques utiles, structurées et accessibles.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projets">Découvrir mes projets <span>↘</span></a>
+          <a class="button button-ghost" href="#contact">Entrer en contact <span>↗</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="meta-line"></i> Basé en Côte d’Ivoire</span>
+          <span><i class="meta-line"></i> Web · Gestion · Produit numérique</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+        <div class="visual-glow"></div>
+        <div class="code-window">
+          <div class="window-top">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>developer.js</span><span class="window-lock">⌘</span>
+          </div>
+          <div class="code-content">
+            <div><span class="line-no">01</span><span class="code-purple">const</span> <span class="code-blue">developer</span> = {</div>
+            <div><span class="line-no">02</span>&nbsp;&nbsp;name: <span class="code-green">'Franck Konan'</span>,</div>
+            <div><span class="line-no">03</span>&nbsp;&nbsp;focus: [</div>
+            <div><span class="line-no">04</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">'Web development'</span>,</div>
+            <div><span class="line-no">05</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">'Digital solutions'</span></div>
+            <div><span class="line-no">06</span>&nbsp;&nbsp;],</div>
+            <div><span class="line-no">07</span>&nbsp;&nbsp;mindset: <span class="code-green">'Build & improve'</span>,</div>
+            <div><span class="line-no">08</span>&nbsp;&nbsp;available: <span class="code-orange">true</span></div>
+            <div><span class="line-no">09</span>};</div>
+            <div class="code-cursor"></div>
+          </div>
+          <div class="window-footer"><span><b></b> SYSTEM READY</span><span>UTF-8&nbsp; · &nbsp;JS</span></div>
+        </div>
+        <div class="floating-chip chip-top"><span class="chip-icon">⌘</span><span><b>Concevoir</b><small>Des solutions utiles</small></span></div>
+        <div class="floating-chip chip-bottom"><span class="chip-icon chip-icon-blue">✳</span><span><b>Construire</b><small>Avec méthode et précision</small></span></div>
+      </div>
+      <a class="scroll-cue" href="#apropos"><span></span> FAIRE DÉFILER</a>
+    </section>
+
+    <section class="intro-strip">
+      <div class="container strip-inner">
+        <span>DU BESOIN</span><b>→</b><span>À LA SOLUTION</span><b>→</b><span>AU PRODUIT</span>
+      </div>
+    </section>
+
+    <section class="section container about-section" id="apropos">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / À PROPOS</p>
+        <h2>La technologie a du sens<br><span class="muted">quand elle résout un problème.</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-lead reveal">
+          <p class="lead-text">Je suis un développeur web junior passionné par la création de solutions numériques concrètes.</p>
+        </div>
+        <div class="about-detail reveal">
+          <p>Mon approche part d’un besoin : comprendre le fonctionnement d’une activité, organiser les informations, puis concevoir un outil qui simplifie le quotidien de ses utilisateurs.</p>
+          <p>Je travaille principalement avec les technologies du web et je développe mes compétences à travers des projets personnels, de la conception à la mise en œuvre.</p>
+          <div class="about-facts">
+            <div><strong>01</strong><span>Comprendre le besoin</span></div>
+            <div><strong>02</strong><span>Concevoir la solution</span></div>
+            <div><strong>03</strong><span>Développer et améliorer</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="competences">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-index">02 / COMPÉTENCES</p>
+          <h2>Des outils pour <span class="gradient-text">concrétiser les idées.</span></h2>
+          <p class="section-subtitle">Mon socle technique actuel, mobilisé dans la réalisation de projets web et d’outils de gestion.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">&lt;/&gt;</div><h3>Développement front-end</h3>
+            <p>Créer des interfaces claires, adaptatives et agréables à utiliser.</p>
+            <div class="skill-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">{ }</div><h3>Développement back-end</h3>
+            <p>Construire la logique applicative et gérer les échanges avec les données.</p>
+            <div class="skill-tags"><span>PHP natif</span><span>MySQL</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">⌘</div><h3>Outils & environnement</h3>
+            <p>Organiser le code, tester localement et suivre les évolutions d’un projet.</p>
+            <div class="skill-tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>XAMPP</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">▦</div><h3>Outils de gestion</h3>
+            <p>Structurer et exploiter des données pour faciliter le suivi d’activité.</p>
+            <div class="skill-tags"><span>Excel</span><span>Conception fonctionnelle</span><span>Documentation</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container projects-section" id="projets">
+      <div class="section-heading projects-heading reveal">
+        <div><p class="section-index">03 / PROJETS SÉLECTIONNÉS</p><h2>Du concret. <span class="muted">Pas seulement des idées.</span></h2></div>
+        <p class="section-subtitle">Quelques projets qui illustrent ma manière d’apprendre, de concevoir et de construire.</p>
+      </div>
+
+      <article class="project-card project-featured reveal">
+        <div class="project-visual immo-visual real-interface">
+          <img src="assets/images/immogestion-dashboard.png" alt="Capture réelle du tableau de bord d’ImmoGestion CI : statistiques des biens, locations, ventes et revenus" loading="lazy">
+          <span class="visual-label">CAPTURE RÉELLE · TABLEAU DE BORD IMMOGESTION CI</span>
+        </div>
+        <div class="project-info">
+          <div class="project-topline"><span class="project-number">PROJET 01</span><span class="project-status"><i></i> APPLICATION OPÉRATIONNELLE</span></div>
+          <h3>ImmoGestion CI</h3>
+          <p class="project-summary">Une application de gestion immobilière conçue pour aider les agences et professionnels de l’immobilier à centraliser leurs opérations.</p>
+          <ul class="project-points"><li>Gestion des biens, propriétaires et locataires</li><li>Suivi des locations, échéances et paiements</li><li>Gestion des ventes, visites et documents</li></ul>
+          <div class="project-tags"><span>PHP natif</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
+          <p class="project-note">Projet personnel développé et testé. Commercialisation en préparation.</p>
+          <a class="text-link" href="https://immogestion-ci.freedev.app/" target="_blank" rel="noopener noreferrer">Voir la démonstration <span>↗</span></a>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card project-small reveal">
+          <div class="small-project-visual business-visual">
+            <div class="sheet-window"><div class="sheet-head"><span>BusinessPilot</span><span>▦</span></div><div class="sheet-toolbar"></div><div class="sheet-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="sheet-bottom"><b>Suivi des ventes</b><span>FCFA</span></div></div>
+          </div>
+          <div class="project-info">
+            <div class="project-topline"><span class="project-number">PROJET 02</span><span class="project-status status-progress"><i></i> EN DÉVELOPPEMENT</span></div>
+            <h3>BusinessPilot CI</h3>
+            <p class="project-summary">Des outils de gestion sur tableur destinés à aider les petits entrepreneurs à mieux suivre leur activité.</p>
+            <div class="project-tags"><span>Excel</span><span>LibreOffice Calc</span><span>Gestion</span></div>
+            <p class="project-note">Prototype en cours d’amélioration, notamment sur l’expérience utilisateur.</p>
+          </div>
+        </article>
+        <article class="project-card project-small reveal">
+          <div class="small-project-visual course-visual">
+            <div class="course-stack"><div class="course-page page-back"></div><div class="course-page page-front"><span>HTML</span><b>Du Zéro<br>au Premier<br><em>Site Web.</em></b><small>APPRENDRE · PRATIQUER · CRÉER</small></div><div class="course-badge">01</div></div>
+          </div>
+          <div class="project-info">
+            <div class="project-topline"><span class="project-number">PROJET 03</span><span class="project-status status-progress"><i></i> EN PRÉPARATION</span></div>
+            <h3>Du Zéro au Premier Site Web</h3>
+            <p class="project-summary">Un parcours pédagogique pratique pour accompagner les débutants francophones dans la création de leur premier site web.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP / MySQL</span></div>
+            <p class="project-note">Prototype pédagogique testé localement avec XAMPP.</p>
+          </div>
+        </article>
+      </div><br>        <article class="project-card project-small reveal experts-project">
+          <div class="small-project-visual experts-visual">
+            <div class="experts-browser">
+              <div class="experts-browser-top"><i></i><i></i><i></i><span>experts12.com</span></div>
+              <div class="experts-browser-content">
+                <small>EXPERTS 12 · GLOBAL SOLUTIONS</small>
+                <b>Des expertises complémentaires.<br><em>Une vision globale.</em></b>
+                <span class="experts-browser-line"></span>
+                <div class="experts-pills"><i>BTP & génie civil</i><i>Télécommunications</i><i>Énergie solaire</i></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-topline"><span class="project-number">PROJET 04</span><span class="project-status"><i></i> SITE EN LIGNE</span></div>
+            <h3>Experts12</h3>
+            <p class="project-summary">Conception et réalisation d’un site vitrine pour présenter l’entreprise, ses domaines d’expertise, ses réalisations et faciliter les demandes de contact et de devis.</p>
+            <div class="project-tags"><span>Site vitrine</span><span>Présentation d’entreprise</span><span>Web design</span></div>
+            <p class="project-note">Site accessible en ligne : experts12.com.</p>
+            <a class="text-link" href="https://www.experts12.com/" target="_blank" rel="noopener noreferrer">Visiter le site Experts12 <span>↗</span></a>
+          </div>
+        </article>
+    </section>    <section class="section journey-section" id="parcours">
+      <div class="container journey-grid">
+        <div class="section-heading reveal">
+          <p class="section-index">04 / PARCOURS</p>
+          <h2>Apprendre.<br><span class="muted">Pratiquer. Progresser.</span></h2>
+          <p class="section-subtitle">Un parcours construit autour de la formation, de l’expérimentation et de projets personnels.</p>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item"><span class="timeline-dot"></span><div><small>FORMATION</small><h3>Parcours universitaire en informatique</h3><p>Niveau Licence 3 atteint — diplôme non obtenu.</p></div></div>
+          <div class="timeline-item"><span class="timeline-dot"></span><div><small>APPRENTISSAGE AUTONOME</small><h3>Développement web</h3><p>Approfondissement de HTML, CSS, JavaScript, PHP et MySQL à travers la pratique.</p></div></div>
+          <div class="timeline-item"><span class="timeline-dot"></span><div><small>PROJETS PERSONNELS</small><h3>Conception de solutions numériques</h3><p>Réalisation de projets orientés gestion, outils métier et apprentissage du développement web.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section container" id="contact">
+      <div class="contact-panel reveal">
+        <div class="contact-orb"></div>
+        <p class="section-index">05 / CONTACT</p>
+        <h2>Une idée, une opportunité<br>ou un projet à construire ?</h2>
+        <p>Je suis ouvert aux opportunités professionnelles, aux collaborations et aux échanges autour de projets numériques.</p>
+        <div class="contact-actions">
+          <a class="button button-light" href="mailto:konanfranckalex12@gmail.com">M’écrire un e-mail <span>↗</span></a>
+          <a class="button button-outline-light" href="https://github.com/Franck-Alex" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+          <a class="button button-outline-light" href="https://wa.me/2250564113072" target="_blank" rel="noopener noreferrer">WhatsApp <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark">FK</span><span>Franck<span class="brand-dot">.</span></span></a><p>Conçu avec intention · © <span id="year"></span> Franck Konan</p><a href="#top" class="back-top">Retour en haut ↑</a></div>
+  </footer>
+</body>
+</html>
